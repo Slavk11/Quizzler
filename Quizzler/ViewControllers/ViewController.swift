@@ -56,7 +56,6 @@ final class ViewController: UIViewController {
     
     private lazy var progressBar: UIProgressView = {
         let element = UIProgressView()
-        element.progress = 0.5
         element.progressTintColor = UIColor(red: 1.00, green: 0.46, blue: 0.66, alpha: 1)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element

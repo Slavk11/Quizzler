@@ -60,17 +60,65 @@
 		79F33D032AED56ED00E69C9B /* Quizzler */ = {
 			isa = PBXGroup;
 			children = (
-				79F33D042AED56ED00E69C9B /* AppDelegate.swift */,
-				79F33D062AED56ED00E69C9B /* SceneDelegate.swift */,
-				79F33D082AED56ED00E69C9B /* ViewController.swift */,
-				79F33D1C2AEED37800E69C9B /* UIKit + Extensions.swift */,
-				79F33D182AEEC8BE00E69C9B /* Question.swift */,
-				79F33D1A2AEEC96D00E69C9B /* QuizBrain.swift */,
-				79F33D0D2AED56F000E69C9B /* Assets.xcassets */,
-				79F33D0F2AED56F000E69C9B /* LaunchScreen.storyboard */,
-				79F33D122AED56F000E69C9B /* Info.plist */,
+				79F33D1F2AEED43F00E69C9B /* App */,
+				79F33D202AEED44C00E69C9B /* ViewControllers */,
+				79F33D1E2AEED40500E69C9B /* Common Extensions */,
+				79F33D212AEED48500E69C9B /* Models */,
+				79F33D222AEED49700E69C9B /* Resources */,
+				79F33D232AEED4A800E69C9B /* Storyboards */,
 			);
 			path = Quizzler;
+			sourceTree = "<group>";
+		};
+		79F33D1E2AEED40500E69C9B /* Common Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				79F33D1C2AEED37800E69C9B /* UIKit + Extensions.swift */,
+			);
+			path = "Common Extensions";
+			sourceTree = "<group>";
+		};
+		79F33D1F2AEED43F00E69C9B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				79F33D042AED56ED00E69C9B /* AppDelegate.swift */,
+				79F33D062AED56ED00E69C9B /* SceneDelegate.swift */,
+				79F33D122AED56F000E69C9B /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		79F33D202AEED44C00E69C9B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				79F33D082AED56ED00E69C9B /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		79F33D212AEED48500E69C9B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				79F33D182AEEC8BE00E69C9B /* Question.swift */,
+				79F33D1A2AEEC96D00E69C9B /* QuizBrain.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		79F33D222AEED49700E69C9B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				79F33D0D2AED56F000E69C9B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		79F33D232AEED4A800E69C9B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				79F33D0F2AED56F000E69C9B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,7 +342,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MLZMX2BSJ3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Quizzler/Info.plist;
+				INFOPLIST_FILE = Quizzler/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -321,7 +369,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MLZMX2BSJ3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Quizzler/Info.plist;
+				INFOPLIST_FILE = Quizzler/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
