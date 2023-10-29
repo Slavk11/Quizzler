@@ -66,7 +66,12 @@ final class ViewController: UIViewController {
     private let secondButton = UIButton(buttonText: "2")
     private let thirdButton = UIButton(buttonText: "3")
     
+    // MARK: - Private Properties
     
+    private var quizBrain = QuizBrain()
+    private var delayTime = 0.3
+    
+    private var timer = Timer()
     
     // MARK: - Life Cycle
     
@@ -75,11 +80,10 @@ final class ViewController: UIViewController {
         
         setupUI()
         setupConstraints()
+        updateUI()
     }
     
-}
-
-extension ViewController {
+    // MARK: - Private Methods
     
     private func setupUI() {
         view.backgroundColor = UIColor(red: 0.15, green: 0.17, blue: 0.29, alpha: 1)
@@ -99,7 +103,48 @@ extension ViewController {
         
         scoreLabel.text = "Score: "
         questionLabel.text = "Which is the largest organ in the human body?"
+        
+        firstButton.addTarget(self, action: #selector(answerButtonPressed), for: .touchUpInside)
+        secondButton.addTarget(self, action: #selector(answerButtonPressed), for: .touchUpInside)
+        thirdButton.addTarget(self, action: #selector(answerButtonPressed), for: .touchUpInside)
+        
+        firstButton.layer.cornerRadius = 20
+        secondButton.layer.cornerRadius = 20
+        thirdButton.layer.cornerRadius = 20
+
+
     }
+    
+    @objc private func answerButtonPressed(_ sender: UIButton) {
+        guard let userAnswer = sender.currentTitle else {
+            print("CurrentTitle Error")
+            return
+        }
+        
+        let check = quizBrain.checkAnswer(userAnswer)
+        
+        sender.backgroundColor = check ? .green : .red
+        
+        quizBrain.nextQuestion()
+        
+        timer = Timer.scheduledTimer(timeInterval: delayTime, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+    }
+    
+    @objc private func updateUI() {
+        
+        questionLabel.text = quizBrain.getQuestionText
+        progressBar.setProgress(quizBrain.progress, animated: true)
+        scoreLabel.text = "Score: \(quizBrain.getScore())"
+        
+        firstButton.setTitle(quizBrain.getAnswer()[0], for: .normal)
+        secondButton.setTitle(quizBrain.getAnswer()[1], for: .normal)
+        thirdButton.setTitle(quizBrain.getAnswer()[2], for: .normal)
+        
+        firstButton.backgroundColor = .clear
+        secondButton.backgroundColor = .clear
+        thirdButton.backgroundColor = .clear
+    }
+
     
     
     private func setupConstraints() {
@@ -122,18 +167,7 @@ extension ViewController {
             
         ])
     }
+    
 }
 
-extension UIButton {
-    convenience init(buttonText: String) {
-        self.init(type: .system)
-        
-        self.titleLabel?.font = .systemFont(ofSize: 25)
-        self.tintColor = .white
-        self.setBackgroundImage(UIImage(named: "Rectangle"), for: .normal)
-        self.titleLabel?.font = .systemFont(ofSize: 25)
-        self.setTitle(buttonText, for: .normal)
-        self.translatesAutoresizingMaskIntoConstraints = false
-    }
-}
 
